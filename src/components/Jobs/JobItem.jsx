@@ -1,6 +1,7 @@
 import React from 'react';
 import JobLogo from './JobLogo';
 import JobTags from './JobTags';
+import './JobItem.scss'
 
 const JobItem = props => {
   return (

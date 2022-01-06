@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import JobList from './components/Jobs/JobList';
 import JsonData from './data.json';
+import './App.scss';
 
 const initialData = JsonData.map(data => {
   return {
@@ -25,7 +26,10 @@ const App = () => {
   const [jobsList, setJobsList] = useState(initialData);
 
   return (
-    <div>
+    <div className='App'>
+      <header className='header'>
+        <img src='./images/bg-header-desktop.svg' alt='header' className="header--bg-img" />
+      </header>
       <JobList jobs={jobsList} />
     </div>
   );
