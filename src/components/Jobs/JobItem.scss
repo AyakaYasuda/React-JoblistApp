@@ -1,0 +1,91 @@
+@use '../../sass/mixins' as mixin;
+@use '../../sass/variables' as var;
+
+.job-item {
+  display: grid;
+  align-items: center;
+
+  @include mixin.media-mobile {
+    grid-template-columns: minmax(100px, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 2rem;
+  }
+
+  @include mixin.media-medium {
+    grid-template-columns: 100px repeat(2, minmax(300px, 2fr));
+    grid-template-rows: max-content;
+    column-gap: 1.5rem;
+
+    &__bio {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  @include mixin.media-desktop {
+    grid-template-columns: 100px repeat(2, minmax(300px, 2fr));
+    grid-template-rows: max-content;
+    column-gap: 1.5rem;
+
+    &__bio {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+}
+
+.job-bio {
+  display: flex;
+  flex-direction: column;
+
+  &__row1 {
+    display: flex;
+    align-items: center;
+
+    p {
+      color: var.$primaryColor;
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+
+    button {
+      color: white;
+      padding: 0.3rem 0.5rem;
+      border-radius: 20px;
+      margin: 0 0.5rem;
+    }
+
+    #new {
+      background-color: var.$primaryColor;
+    }
+
+    #featured {
+      background-color: var.$veryDarkColor;
+    }
+  }
+
+  &__row2 {
+    margin: 1.2rem 0;
+    color: var.$textColor;
+  }
+
+  &__row3 {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 2rem;
+      color: var.$lightTextColor;
+    }
+  }
+
+  @include mixin.media-mobile {
+    padding-bottom: 2rem;
+    border-bottom: var.$lightTextColor solid 1px;
+  }
+
+  @include mixin.media-medium {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
