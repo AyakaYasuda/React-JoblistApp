@@ -1,17 +1,16 @@
-@use '../../sass/mixins' as mixin;
-@use '../../sass/variables' as var;
+@use '../../sass/base';
 
 .job-item {
   display: grid;
   align-items: center;
 
-  @include mixin.media-mobile {
+  @include base.media-mobile {
     grid-template-columns: minmax(100px, 1fr);
     grid-template-rows: repeat(3, max-content);
     row-gap: 2rem;
   }
 
-  @include mixin.media-medium {
+  @include base.media-medium {
     grid-template-columns: 100px repeat(2, minmax(300px, 2fr));
     grid-template-rows: max-content;
     column-gap: 1.5rem;
@@ -22,7 +21,7 @@
     }
   }
 
-  @include mixin.media-desktop {
+  @include base.media-desktop {
     grid-template-columns: 100px repeat(2, minmax(300px, 2fr));
     grid-template-rows: max-content;
     column-gap: 1.5rem;
@@ -43,7 +42,7 @@
     align-items: center;
 
     p {
-      color: var.$primaryColor;
+      color: base.$primaryColor;
       font-weight: 700;
       margin-right: 0.5rem;
     }
@@ -56,17 +55,17 @@
     }
 
     #new {
-      background-color: var.$primaryColor;
+      background-color: base.$primaryColor;
     }
 
     #featured {
-      background-color: var.$veryDarkColor;
+      background-color: base.$veryDarkColor;
     }
   }
 
   &__row2 {
     margin: 1.2rem 0;
-    color: var.$textColor;
+    color: base.$textColor;
   }
 
   &__row3 {
@@ -75,16 +74,16 @@
 
     p {
       margin-right: 2rem;
-      color: var.$lightTextColor;
+      color: base.$lightTextColor;
     }
   }
 
-  @include mixin.media-mobile {
+  @include base.media-mobile {
     padding-bottom: 2rem;
-    border-bottom: var.$lightTextColor solid 1px;
+    border-bottom: base.$lightTextColor solid 1px;
   }
 
-  @include mixin.media-medium {
+  @include base.media-medium {
     padding-bottom: 0;
     border-bottom: none;
   }
