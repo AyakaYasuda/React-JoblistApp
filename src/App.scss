@@ -1,15 +1,7 @@
-@use './sass/variables' as var;
-
-.App {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Spartan', sans-serif;
-  background-color: var.$lightColor1;
-}
+@use './sass/base';
 
 .header {
-  background-color: var.$primaryColor;
+  background-color: base.$primaryColor;
   width: 100%;
   height: 10rem;
 

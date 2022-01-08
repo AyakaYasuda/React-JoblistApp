@@ -1,4 +1,4 @@
-@use '../../sass/mixins' as mixin;
+@use '../../sass/base';
 
 .job-logo {
     
@@ -9,12 +9,12 @@
     text-align: center;
   }
 
-  @include mixin.media-medium {
+  @include base.media-medium {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }
 
-  @include mixin.media-desktop {
+  @include base.media-desktop {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
   }

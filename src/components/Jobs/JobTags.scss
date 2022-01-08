@@ -1,28 +1,27 @@
-@use '../../sass/mixins' as mixin;
-@use '../../sass/variables' as var;
+@use '../../sass/base' as base;
 @use '../../sass/typography' as typo;
 
 .job-tags {
   justify-self: end;
 
-  @include mixin.media-mobile {
+  @include base.media-mobile {
     justify-self: start;
   }
 
-  @include mixin.media-medium {
+  @include base.media-medium {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
   }
 
-  @include mixin.media-desktop {
+  @include base.media-desktop {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
   }
 
   &__btn {
-    background-color: var.$lightColor2;
+    background-color: base.$lightColor2;
     padding: 0.5rem;
     margin: 0.5rem;
-    color: var.$primaryColor;
+    color: base.$primaryColor;
   }
 }
