@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import JobItem from './JobItem';
-import JobSearch from './JobSearch';
 
 const JobList = props => {
   return (
     <div>
-      <JobSearch jobs={props.jobs} />
       {props.jobs.map(job => (
         <JobItem
           key={job.id}

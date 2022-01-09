@@ -29,14 +29,10 @@ const JobSearch = props => {
   const optionsArr = Array.from(
     new Set([...rollArr, ...levelArr, ...langArr, ...toolArr])
   );
-//   optionsArr.unshift('Sample');
+  //   optionsArr.unshift('Sample');
 
   // 2) Set the options data in the autocomplete search box
-  const fixedOptions = [optionsArr[0]];
-  const [selected, setSelected] = React.useState([
-    ...fixedOptions,
-    optionsArr[1],
-  ]);
+  const [selected, setSelected] = React.useState([optionsArr[1]]);
 
   return (
     <Autocomplete
@@ -44,10 +40,7 @@ const JobSearch = props => {
       id='fixed-tags-demo'
       selected={selected}
       onChange={(event, newValue) => {
-        setSelected([
-          ...fixedOptions,
-          ...newValue.filter(option => fixedOptions.indexOf(option) === -1),
-        ]);
+        setSelected([...newValue]);
       }}
       options={optionsArr}
       getOptionLabel={option => option}
@@ -56,7 +49,7 @@ const JobSearch = props => {
           <Chip
             label={option}
             {...getTagProps({ index })}
-            disabled={fixedOptions.indexOf(option) !== -1}
+            // disabled={fixedOptions.indexOf(option) !== -1}
           />
         ))
       }
