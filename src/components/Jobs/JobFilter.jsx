@@ -3,8 +3,7 @@ import React from 'react';
 const JobFilter = props => {
   const contractChangeHandler = event => {
     props.onChangeContractFilter(event.target.value);
-    props.onChangeJobListFilter();
-  }
+  };
 
   const locationChangeHandler = event => {
     props.onChangeLocationFilter(event.target.value);

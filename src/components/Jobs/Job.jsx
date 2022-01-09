@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import JobSearch from './JobSearch';
 import JobFilter from './JobFilter';
 import JobList from './JobList';
+import JobButton from './JobButton';
 
 const Job = props => {
   // Get jobs filtered by contract and location
@@ -30,7 +31,15 @@ const Job = props => {
 
   const [newJobList, setNewJobList] = useState(props.jobs);
   const jobListChangeHandler = () => {
-    if (filteredContract !== 'All') setNewJobList(jobsFilteredByContract);
+    if (filteredContract !== 'All' && filteredLocation !== 'All') {
+      setNewJobList(jobsFilteredByBoth);
+    } else if (filteredContract !== 'All' && filteredLocation === 'All') {
+      setNewJobList(jobsFilteredByContract);
+    } else if (filteredContract === 'All' && filteredLocation !== 'All') {
+      setNewJobList(jobsFilteredByLocation);
+    } else {
+      setNewJobList(props.jobs);
+    }
   };
 
   return (
@@ -41,8 +50,8 @@ const Job = props => {
         selectedLocation={filteredLocation}
         onChangeContractFilter={contractChangeHandler}
         onChangeLocationFilter={locationChangeHandler}
-        onChangeJobListFilter={jobListChangeHandler}
       />
+      <JobButton onChangeJobList={jobListChangeHandler} />
       <JobList jobs={newJobList} />
     </div>
   );
