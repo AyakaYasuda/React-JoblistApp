@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import JobList from './components/Jobs/JobList';
+import Job from './components/Jobs/Job';
 import JsonData from './data.json';
 import './App.scss';
 
@@ -30,7 +30,7 @@ const App = () => {
       <header className='header'>
         <img src='./images/bg-header-desktop.svg' alt='header' className="header--bg-img" />
       </header>
-      <JobList jobs={jobsList} />
+      <Job jobs={jobsList} />
     </div>
   );
 };
