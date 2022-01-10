@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 
 const JobFilter = props => {
@@ -35,3 +36,4 @@ const JobFilter = props => {
 };
 
 export default JobFilter;
+*/
