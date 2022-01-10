@@ -28,7 +28,11 @@ const App = () => {
   return (
     <div className='App'>
       <header className='header'>
-        <img src='./images/bg-header-desktop.svg' alt='header' className="header--bg-img" />
+        <img
+          src='./images/bg-header-desktop.svg'
+          alt='header'
+          className='header--bg-img'
+        />
       </header>
       <Job jobs={jobsList} />
     </div>
