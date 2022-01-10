@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import JobItem from './JobItem';
+import './JobList.scss';
 
 const JobList = props => {
   return (
-    <div>
+    <div className='job-container'>
       {props.jobs.map(job => (
         <JobItem
           key={job.id}

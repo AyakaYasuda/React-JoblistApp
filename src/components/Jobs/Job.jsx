@@ -3,6 +3,7 @@ import JobSearch from './JobSearch';
 // import JobFilter from './JobFilter';
 import JobList from './JobList';
 // import JobSearchButton from './JobSearchButton';
+import './Job.scss'
 
 const Job = props => {
   /*
@@ -97,7 +98,7 @@ const Job = props => {
   // };
 
   return (
-    <div>
+    <div className='job'>
       {/* <JobFilter
         selectedContract={filteredContract}
         selectedLocation={filteredLocation}
