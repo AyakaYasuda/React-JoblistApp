@@ -1,0 +1,24 @@
+@use '../../sass/base';
+
+.card {
+  background-color: white;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px hsl(180, 8%, 52%);
+
+  &:hover {
+    border-left: base.$primaryColor 5px solid;
+  }
+
+  @include base.media-mobile {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+
+  @include base.media-desktop {
+    margin-right: 6rem;
+    margin-left: 6rem;
+  }
+}

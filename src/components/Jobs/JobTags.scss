@@ -1,0 +1,20 @@
+@use '../../sass/base' as base;
+@use '../../sass/typography' as typo;
+
+.job-tags {
+  justify-self: end;
+
+  @include base.media-mobile {
+    justify-self: start;
+  }
+
+  @include base.media-medium {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  @include base.media-desktop {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+}

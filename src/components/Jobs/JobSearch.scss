@@ -1,0 +1,54 @@
+@use '../../sass/base';
+@use '../../sass/typography';
+
+.searchbox-container {
+  margin-top: 5rem;
+
+  @include base.media-mobile {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: 80%;
+  }
+
+  @include base.media-desktop {
+    margin-right: 6rem;
+    margin-left: 6rem;
+    width: 50%;
+  }
+}
+
+.searchbox {
+  font-family: 'Spartan', sans-serif;
+  background-color: white;
+}
+
+#fixed-tags-demo {
+  font-family: 'Spartan', sans-serif;
+}
+
+#fixed-tags-demo-label {
+  font-family: 'Spartan', sans-serif;
+  color: base.$primaryColor;
+  font-size: 1rem;
+}
+
+.MuiAutocomplete-root {
+  font-family: 'Spartan', sans-serif;
+
+  & .MuiAutocomplete-tag {
+    font-family: 'Spartan', sans-serif;
+    @extend .job-tags__btn;
+  }
+}
+
+.MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: 'Spartan', sans-serif;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+.MuiAutocomplete-listbox li {
+  font-family: 'Spartan', sans-serif !important;
+}
