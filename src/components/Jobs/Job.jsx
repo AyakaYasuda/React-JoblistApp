@@ -3,7 +3,7 @@ import JobSearch from './JobSearch';
 // import JobFilter from './JobFilter';
 import JobList from './JobList';
 // import JobSearchButton from './JobSearchButton';
-import './Job.scss'
+import './Job.scss';
 
 const Job = props => {
   /*
@@ -41,6 +41,7 @@ const Job = props => {
     -------------------------
   */
   // 1) Get tag data and store it in a single array as optionsArr
+
   const rollArr = Array.from(new Set(props.jobs.map(job => job.role)));
   const levelArr = Array.from(new Set(props.jobs.map(job => job.level)));
 
@@ -77,10 +78,19 @@ const Job = props => {
   // 3) Make a filtered job list to pass to the JobList
   const filteredJobList = props.jobs.filter(job => {
     let booleanArr = [];
+    const valuesJobHas = Object.values(job);
+    let tagsJobHas = [];
+    tagsJobHas.push(
+      valuesJobHas[6],
+      valuesJobHas[7],
+      ...valuesJobHas[11],
+      ...valuesJobHas[12]
+    );
+    console.log(tagsJobHas);
     for (let i = 0; i < selectedTags.length; i++) {
-      booleanArr.push(Object.values(job).indexOf(selectedTags[i]) !== -1);
+      booleanArr.push(tagsJobHas.indexOf(selectedTags[i]) !== -1);
     }
-    return !booleanArr.includes(false)
+    return !booleanArr.includes(false);
   });
 
   // 4) Set the new job list filtered by contract and location
@@ -105,10 +115,7 @@ const Job = props => {
         onChangeContractFilter={contractChangeHandler}
         onChangeLocationFilter={locationChangeHandler}
       /> */}
-      <JobSearch
-        options={optionsArr}
-        onChangeSelectedTags={tagsChangeHandler}
-      />
+      <JobSearch options={optionsArr} onChangeSelectedTags={tagsChangeHandler} />
       {/* <JobSearchButton onChangeJobList={jobListChangeHandler} /> */}
       <JobList jobs={filteredJobList} />
     </div>
