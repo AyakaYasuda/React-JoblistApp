@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Job from './components/Jobs/Job';
 import JsonData from './data.json';
 import './App.scss';
@@ -23,7 +23,7 @@ const initialData = JsonData.map(data => {
 console.log(initialData);
 
 const App = () => {
-  const [jobsList, setJobsList] = useState(initialData);
+  const jobsList = initialData;
 
   return (
     <div className='App'>

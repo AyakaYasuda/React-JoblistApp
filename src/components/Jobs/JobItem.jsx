@@ -3,7 +3,6 @@ import JobLogo from './JobLogo';
 import JobTags from './JobTags';
 import Card from '../UI/Card';
 import './JobItem.scss';
-import { getSelectionRange } from '@testing-library/user-event/dist/utils';
 
 const JobItem = props => {
   return (

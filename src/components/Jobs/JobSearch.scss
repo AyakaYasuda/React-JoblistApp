@@ -29,7 +29,8 @@
 #fixed-tags-demo-label {
   font-family: 'Spartan', sans-serif;
   color: base.$primaryColor;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .MuiAutocomplete-root {
@@ -41,14 +42,11 @@
   }
 }
 
-.MuiInputBase-root-MuiOutlinedInput-root {
-  font-family: 'Spartan', sans-serif;
-}
-
 .MuiOutlinedInput-notchedOutline {
   border: none !important;
 }
 
 .MuiAutocomplete-listbox li {
   font-family: 'Spartan', sans-serif !important;
+  font-size: 1.2rem !important;
 }
