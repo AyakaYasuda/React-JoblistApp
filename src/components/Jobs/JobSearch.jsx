@@ -4,35 +4,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
 const JobSearch = props => {
-  // 1) Get tag data and store it in a single array
-  const rollArr = Array.from(new Set(props.jobs.map(job => job.role)));
-  const levelArr = Array.from(new Set(props.jobs.map(job => job.level)));
-
-  const languages = [];
-  const langData = props.jobs.map(job => job.languages);
-  for (let i = 0; i < langData.length; i++) {
-    for (let j = 0; j < langData[i].length; j++) {
-      languages.push(langData[i][j]);
-    }
-  }
-  const langArr = Array.from(new Set(languages));
-
-  const tools = [];
-  const toolData = props.jobs.map(job => job.tools);
-  for (let i = 0; i < toolData.length; i++) {
-    for (let j = 0; j < toolData[i].length; j++) {
-      tools.push(toolData[i][j]);
-    }
-  }
-  const toolArr = Array.from(new Set(tools));
-
-  const optionsArr = Array.from(
-    new Set([...rollArr, ...levelArr, ...langArr, ...toolArr])
-  );
-  //   optionsArr.unshift('Sample');
-
-  // 2) Set the options data in the autocomplete search box
-  const [selected, setSelected] = React.useState([optionsArr[1]]);
+  const selected = [];
 
   return (
     <Autocomplete
@@ -40,9 +12,9 @@ const JobSearch = props => {
       id='fixed-tags-demo'
       selected={selected}
       onChange={(event, newValue) => {
-        setSelected([...newValue]);
+        props.onChangeSelectedTags([...newValue]);
       }}
-      options={optionsArr}
+      options={props.options}
       getOptionLabel={option => option}
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => (

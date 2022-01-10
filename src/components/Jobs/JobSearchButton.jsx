@@ -1,6 +1,7 @@
+/*
 import React from 'react';
 
-const JobButton = props => {
+const JobSearchButton = props => {
   const jobListChangeHandler = () => {
     props.onChangeJobList();
   };
@@ -8,4 +9,5 @@ const JobButton = props => {
   return <button onClick={jobListChangeHandler}>Search!</button>;
 };
 
-export default JobButton;
+export default JobSearchButton;
+*/
